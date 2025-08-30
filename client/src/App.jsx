@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import CompanySingupForm from "./pages/CompanySignupForm";
+import ex from "./components/ex";
+import { Route, Routes } from "react-router-dom";
 
 axios.defaults.withCredentials = true;
 
@@ -51,7 +53,10 @@ export default function App() {
 
   return (
     <div >
-        <CompanySingupForm/>
+        <Routes>
+        <Route path="/" element={<ex />} />
+        <Route path="/company-signup" element={<CompanySingupForm />} />
+        </Routes>
     </div>
   );
 }

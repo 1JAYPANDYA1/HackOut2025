@@ -6,7 +6,7 @@ import cors from "cors";
 import csurf from "csurf";
 // import dotenv from `"dotenv";
 import {REDIS_HOST,REDIS_PORT,REDIS_PASSWORD} from "./config/env.config.js";
-
+import companyRoutes from "./routes/company.routes.js";
 import helmet from "helmet";
 
 // dotenv.config();
@@ -96,6 +96,9 @@ app.get("/me", async (req, res) => {
   const decryptedUser = JSON.parse(decrypt(encryptedUser));
   res.json({ message: "Authenticated", user: decryptedUser });
 });
+
+app.use("/api/companies", companyRoutes);
+
 
 app.post("/logout", async (req, res) => {
   const sessionId = req.sessionID;
