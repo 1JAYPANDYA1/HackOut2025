@@ -1,10 +1,10 @@
 export const companyDetailsFields = [
-  { name: "name", label: "Company Name", type: "text" },
-  { name: "logo", label: "Company Logo", type: "file", accept: "image/*" },
-  { name: "email", label: "Company Email", type: "email" },
-  { name: "phone", label: "Phone Number", type: "text" },
-  { name: "contactPerson", label: "Contact Person", type: "text" },
-  { name: "address", label: "Company Address", type: "text" },
+  { name: "companyName", label: "Company Name", type: "text" },
+  { name: "companyLogo", label: "Company Logo", type: "file", accept: "image/*" },
+  { name: "companyEmail", label: "Company Email", type: "email" },
+  { name: "companyPhoneNumber", label: "Phone Number", type: "text" },
+  { name: "companyContactPersonName", label: "Contact Person", type: "text" },
+  { name: "companyAddress", label: "Company Address", type: "text" },
 ];
 
 export const companyDocumentFields = [
