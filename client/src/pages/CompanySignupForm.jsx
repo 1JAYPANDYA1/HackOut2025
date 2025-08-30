@@ -12,7 +12,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { updateDetail, updateDocument } from "../store/slices/companySlice";
+import { createCompany, updateDetail, updateDocument } from "../store/slices/companySlice";
 import { companyDetailsFields, companyDocumentFields } from "../config/CompanyForm";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -38,6 +38,7 @@ export default function CompanyForm() {
   const handleSubmit = () => {
     const payload = { ...details, documents };
     console.log("Final Submit Payload:", payload);
+    dispatch(createCompany(payload));
     // TODO: send payload to backend
   };
 

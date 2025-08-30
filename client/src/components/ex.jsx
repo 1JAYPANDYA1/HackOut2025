@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ex() {
+function Ex() {
   return (
     <div>
       hello ex
@@ -8,4 +8,4 @@ function ex() {
   )
 }
 
-export default ex
+export default Ex

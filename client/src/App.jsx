@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import CompanySingupForm from "./pages/CompanySignupForm";
-import ex from "./components/ex";
+import Ex from "./components/Ex";
 import { Route, Routes } from "react-router-dom";
-
+import { AppBar, Toolbar, Typography, Box, Container } from "@mui/material";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 axios.defaults.withCredentials = true;
 
 export default function App() {
@@ -52,11 +54,20 @@ export default function App() {
   };
 
   return (
-    <div >
+    <Box display="flex" flexDirection="column" minHeight="100vh">
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Main Content */}
+      <Container sx={{ flex: 1, py: 3 }}>
         <Routes>
-        <Route path="/" element={<ex />} />
-        <Route path="/company-signup" element={<CompanySingupForm />} />
+          <Route path="/" element={<Ex />} />
+          <Route path="/company-signup" element={<CompanySingupForm />} />
         </Routes>
-    </div>
+      </Container>
+
+      {/* Footer */}
+      <Footer />
+    </Box>
   );
 }
