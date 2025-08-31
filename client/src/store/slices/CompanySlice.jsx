@@ -36,12 +36,12 @@ export const fetchCompanies = createAsyncThunk(
 // ---------- Initial State ----------
 const initialState = {
   details: {
-    name: "",
-    logo: null,
-    email: "",
-    phone: "",
-    contactPerson: "",
-    address: "",
+    companyName: "",
+    companyLogo: null,
+    companyEmail: "",
+    companyPhoneNumber: "",
+    companyContactPersonName: "",
+    companyAddress: "",
   },
   documents: {
     iso: null,
