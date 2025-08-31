@@ -1,11 +1,14 @@
-import { useState, useEffect } from "react";
+import { Box, Container } from "@mui/material";
 import axios from "axios";
-import CompanySingupForm from "./pages/CompanySignupForm";
-import Ex from "./components/Ex";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { AppBar, Toolbar, Typography, Box, Container } from "@mui/material";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import About from "./pages/about";
+import CompanySingupForm from "./pages/CompanySignupForm";
+import ContactUs from "./pages/ContactUs";
+import Home from "./pages/Home";
+import LandingPage from "./pages/LandingPage";
 axios.defaults.withCredentials = true;
 
 export default function App() {
@@ -27,8 +30,8 @@ export default function App() {
   }, []);
 
   const login = async () => {
-    const res = await axios.post("http://localhost:3000/login", 
-      { email, password }, 
+    const res = await axios.post("http://localhost:3000/login",
+      { email, password },
       { headers: { "X-CSRF-Token": csrfToken } }
     );
     alert(res.data.message);
@@ -56,12 +59,11 @@ export default function App() {
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
       {/* Navbar */}
-      <Navbar />
-
+    
       {/* Main Content */}
       <Container sx={{ flex: 1, py: 3 }}>
         <Routes>
-          <Route path="/" element={<Ex />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/company-signup" element={<CompanySingupForm />} />
         </Routes>
       </Container>

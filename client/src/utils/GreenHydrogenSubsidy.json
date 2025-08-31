@@ -1,0 +1,104 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "payable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "addFunds",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "bytes32", "name": "_projectId", "type": "bytes32" }
+      ],
+      "name": "approveProject",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "bytes32", "name": "_projectId", "type": "bytes32" },
+        { "internalType": "uint256", "name": "index", "type": "uint256" }
+      ],
+      "name": "markMilestoneComplete",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "bytes32", "name": "_projectId", "type": "bytes32" }
+      ],
+      "name": "releaseSubsidy",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "bytes32", "name": "_projectId", "type": "bytes32" },
+        { "internalType": "uint256", "name": "_requestedSubsidy", "type": "uint256" },
+        { "internalType": "bytes32[]", "name": "milestoneNames", "type": "bytes32[]" },
+        { "internalType": "bytes32[]", "name": "milestoneTargets", "type": "bytes32[]" }
+      ],
+      "name": "submitProject",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "government",
+      "outputs": [
+        { "internalType": "address", "name": "", "type": "address" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalFunds",
+      "outputs": [
+        { "internalType": "uint256", "name": "", "type": "uint256" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "bytes32", "name": "_projectId", "type": "bytes32" }
+      ],
+      "name": "getProject",
+      "outputs": [
+        { "internalType": "address", "name": "company", "type": "address" },
+        { "internalType": "uint256", "name": "requestedSubsidy", "type": "uint256" },
+        { "internalType": "uint256", "name": "releasedAmount", "type": "uint256" },
+        { "internalType": "bool", "name": "approved", "type": "bool" },
+        { "internalType": "uint256", "name": "completedCount", "type": "uint256" },
+        { "internalType": "uint256", "name": "totalMilestones", "type": "uint256" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "bytes32", "name": "_projectId", "type": "bytes32" },
+        { "internalType": "uint256", "name": "index", "type": "uint256" }
+      ],
+      "name": "getMilestone",
+      "outputs": [
+        { "internalType": "bytes32", "name": "name", "type": "bytes32" },
+        { "internalType": "bytes32", "name": "target", "type": "bytes32" },
+        { "internalType": "bool", "name": "completed", "type": "bool" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+}
