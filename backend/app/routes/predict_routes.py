@@ -8,9 +8,13 @@ predict_bp = Blueprint('predict', __name__)
 def predict_all():
     try:
         data = request.json
+        print(data)
         city = data.get("city")
         state = data.get("state")
         country = data.get("country")
+        print(f"City: {city}")
+        print(f"State: {state}")
+        print(f"Country: {country}")
 
         if not city or not state or not country:
             return jsonify({"error": "Please provide city, state, and country"}), 400
@@ -19,7 +23,7 @@ def predict_all():
         lat, lon = get_lat_lon(city, state, country)
         if lat is None or lon is None:
             return jsonify({"error": "Location not found"}), 400
-
+        print(lat,lon)
         # Generate random features
         features = generate_random_features(lat, lon)
 

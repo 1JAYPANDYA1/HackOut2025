@@ -6,3 +6,4 @@ pickle-mixin
 pandas
 joblib
 python-dotenv
+geopy

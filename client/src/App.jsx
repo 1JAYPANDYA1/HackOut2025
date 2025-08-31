@@ -3,14 +3,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import About from "./pages/about";
 import CompanySingupForm from "./pages/CompanySignupForm";
-import ContactUs from "./pages/ContactUs";
-import Home from "./pages/Home";
 import LandingPage from "./pages/LandingPage";
 axios.defaults.withCredentials = true;
-
+import Map from './pages/Map'
 export default function App() {
   const [csrfToken, setCsrfToken] = useState("");
   const [email, setEmail] = useState("");
@@ -59,11 +55,12 @@ export default function App() {
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
       {/* Navbar */}
-    
+
       {/* Main Content */}
-      <Container sx={{ flex: 1, py: 3 }}>
+      <Container sx={{ flex: 1 }}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/map" element={<Map />} />
           <Route path="/company-signup" element={<CompanySingupForm />} />
         </Routes>
       </Container>

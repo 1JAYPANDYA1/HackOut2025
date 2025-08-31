@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Menu, X, CheckCircle, Shield, MapPin, Zap, Users, Mail, Phone } from 'lucide-react';
+import { CheckCircle, Mail, MapPin, Menu, Phone, Shield, Users, X, Zap } from 'lucide-react';
+import { useState } from 'react';
 
 const LandingPage = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -8,7 +8,8 @@ const LandingPage = () => {
   const navigationItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'contact', label: 'Contact' },
+    { id: 'map', label: 'map' }
   ];
 
   const challenges = [
@@ -77,7 +78,7 @@ const LandingPage = () => {
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           HydroTrust
         </h1>
-        <p className="text-xl md:text-2xl mb-8 opacity-90">
+        <p className="text-xl md:text-2xl mb-8">
           Smart Validation & Transparent Subsidies
         </p>
         <p className="text-lg mb-8 max-w-4xl mx-auto">
@@ -98,21 +99,21 @@ const LandingPage = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
             <MapPin className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-3">Smart Site Validation</h3>
+            <h3 className="text-xl font-bold mb-3 text-blue-600">Smart Site Validation</h3>
             <p className="text-gray-600">
               GIS-powered infrastructure planning for optimal hydrogen plant locations
             </p>
           </div>
           <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-xl">
             <Shield className="w-16 h-16 text-green-600 mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-3">Transparent Subsidies</h3>
+            <h3 className="text-xl font-bold mb-3 text-green-600">Transparent Subsidies</h3>
             <p className="text-gray-600">
               Blockchain-based automation ensuring fraud-proof subsidy distribution
             </p>
           </div>
           <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl">
             <Zap className="w-16 h-16 text-purple-600 mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-3">Accelerated Adoption</h3>
+            <h3 className="text-xl font-bold mb-3 text-purple-600">Accelerated Adoption</h3>
             <p className="text-gray-600">
               Centralized mapping and tracking for faster green hydrogen integration
             </p>
@@ -125,8 +126,8 @@ const LandingPage = () => {
         <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Addressing Key Challenges</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {challenges.map((challenge, index) => (
-            <div key={index} className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-xl">
-              <h3 className="text-lg font-bold text-red-700 mb-3">{challenge.title}</h3>
+            <div key={index} className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl">
+              <h3 className="text-lg font-bold text-blue-700 mb-3">{challenge.title}</h3>
               <p className="text-gray-700 text-sm">{challenge.description.substring(0, 120)}...</p>
             </div>
           ))}
@@ -145,15 +146,6 @@ const LandingPage = () => {
 
   const AboutPage = () => (
     <div className="space-y-8">
-      {/* About Hero */}
-      <div className="bg-white rounded-2xl p-8 shadow-xl text-center">
-        <h1 className="text-4xl font-bold mb-6 text-gray-800">About HydroTrust</h1>
-        <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-          Revolutionizing green hydrogen development through intelligent validation, 
-          transparent processes, and blockchain-powered automation.
-        </p>
-      </div>
-
       {/* Challenges Section */}
       <div className="bg-white rounded-2xl p-8 shadow-xl">
         <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
@@ -161,8 +153,8 @@ const LandingPage = () => {
         </h2>
         <div className="space-y-6">
           {challenges.map((challenge, index) => (
-            <div key={index} className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-r-xl">
-              <h3 className="text-xl font-bold text-red-700 mb-3">
+            <div key={index} className="bg-gradient-to-r from-green-50 to-orange-50 border-l-4 border-green-500 p-6 rounded-r-xl">
+              <h3 className="text-xl font-bold text-green-700 mb-3">
                 {index + 1}. {challenge.title}
               </h3>
               <p className="text-gray-700">{challenge.description}</p>
@@ -232,14 +224,6 @@ const LandingPage = () => {
 
   const ContactPage = () => (
     <div className="space-y-8">
-      {/* Contact Hero */}
-      <div className="bg-white rounded-2xl p-8 shadow-xl text-center">
-        <h1 className="text-4xl font-bold mb-6 text-gray-800">Contact Us</h1>
-        <p className="text-xl text-gray-600">
-          Ready to revolutionize green hydrogen development? Get in touch with our team.
-        </p>
-      </div>
-
       <div className="grid md:grid-cols-2 gap-8">
         {/* Contact Form */}
         <div className="bg-white rounded-2xl p-8 shadow-xl">
@@ -272,7 +256,7 @@ const LandingPage = () => {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
               <textarea 
-                rows="5"
+                rows="3"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
                 placeholder="Tell us about your project or inquiry..."
               ></textarea>
@@ -331,63 +315,115 @@ const LandingPage = () => {
     </div>
   );
 
+   const navLinks = [
+    { title: "Home", path: "home" },
+    { title: "About", path: "about" },
+    { title: "Subsidy", path: "subsidy" },
+    { title: "Contact", path: "contact" },
+    { title: "map", path: "map" }
+   ];
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       {/* Header */}
-      <header className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50">
-        <nav className="container mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-blue-600">
-              HydroTrust
-            </div>
+      <header className="sticky top-0 z-50 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 shadow-2xl backdrop-blur-md border-b border-blue-600/20">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
             
+            {/* Logo Section */}
+            <div 
+              onClick={() => setCurrentPage('home')}
+              className="flex items-center space-x-3 cursor-pointer group transition-all duration-300 hover:scale-105"
+            >
+              <div className="text-4xl animate-pulse">💧</div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-white group-hover:text-blue-200 transition-colors duration-300">
+                  HydroTrust
+                </span>
+                <span className="text-xs text-blue-200 font-medium tracking-wide">
+                  Smart Validation & Transparent Subsidies
+                </span>
+              </div>
+            </div>
+
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
-              {navigationItems.map((item) => (
+            <div className="hidden md:flex items-center space-x-2">
+              {navLinks.map((item) => (
                 <button
-                  key={item.id}
-                  onClick={() => setCurrentPage(item.id)}
-                  className={`font-medium transition-colors duration-300 ${
-                    currentPage === item.id 
-                      ? 'text-blue-600 border-b-2 border-blue-600' 
-                      : 'text-gray-700 hover:text-blue-600'
-                  }`}
+                  key={item.title}
+                  onClick={() => setCurrentPage(item.path)}
+                  className={`
+                    relative px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 
+                    ${currentPage === item.path 
+                      ? 'text-white bg-white/20 border-2s shadow-lg scale-105' 
+                      : 'text-blue-100 hover:text-white hover:bg-white/10 hover:scale-105 hover:shadow-md'
+                    }
+                  `}
                 >
-                  {item.label}
+                  {item.title}
+                 
                 </button>
+
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* CTA Button & Mobile Menu */}
+            <div className="flex items-center space-x-4">
+              {/* Get Started Button (Desktop) */}
+              <button
+                onClick={() => setCurrentPage('contact')}
+                className="hidden md:block bg-white/15 backdrop-blur-sm text-white border-2 border-white/30 px-6 py-3 rounded-full font-bold text-sm hover:bg-white/25 hover:border-white/50 hover:scale-105 hover:shadow-xl transition-all duration-300 transform"
+              >
+                Login/SignUp
+              </button>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-all duration-300"
+              >
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Navigation */}
-          {mobileMenuOpen && (
-            <div className="md:hidden mt-4 py-4 border-t border-gray-200">
-              {navigationItems.map((item) => (
+          <div className={`
+            md:hidden overflow-hidden transition-all duration-500 ease-in-out
+            ${mobileMenuOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'}
+          `}>
+            <div className="pt-4 border-t border-white/20">
+              <div className="flex flex-col space-y-2">
+                {navLinks.map((item) => (
+                  <button
+                    key={item.title}
+                    onClick={() => {
+                      setCurrentPage(item.path);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`
+                      w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300
+                      ${currentPage === item.path 
+                        ? 'text-white bg-white/20 border-l-4 border-white shadow-lg' 
+                        : 'text-blue-100 hover:text-white hover:bg-white/10 hover:translate-x-2'
+                      }
+                    `}
+                  >
+                    {item.title}
+                  </button>
+                ))}
                 <button
-                  key={item.id}
                   onClick={() => {
-                    setCurrentPage(item.id);
+                    setCurrentPage('contact');
                     setMobileMenuOpen(false);
                   }}
-                  className={`block w-full text-left py-2 px-4 rounded transition-colors ${
-                    currentPage === item.id 
-                      ? 'text-blue-600 bg-blue-50' 
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                  }`}
+                  className="mt-4 w-full bg-white/15 backdrop-blur-sm text-white border-2 border-white/30 px-4 py-3 rounded-xl font-bold hover:bg-white/25 hover:border-white/50 transition-all duration-300"
                 >
-                  {item.label}
+                  Get Started
                 </button>
-              ))}
+              </div>
             </div>
-          )}
+          </div>
         </nav>
       </header>
 

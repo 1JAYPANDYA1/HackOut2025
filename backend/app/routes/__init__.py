@@ -12,7 +12,8 @@
 #     return app
 # app/routes/__init__.py
 from flask import Flask
-from .predict_routes import predict_routes
+from .predict_routes import predict_bp
+
 
 def register_routes(app: Flask):
     app.register_blueprint(predict_routes)
